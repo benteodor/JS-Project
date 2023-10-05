@@ -39,32 +39,40 @@ console.log("Hi, " + customer + ". Your new balance is USD" + balance);*/
 
 // Greeting Section
 
-/*function celsiusToFahr(temperature) {
+function celsiusToFahr(temperature) {
   console.log(temperature);
 }
 celsiusToFahr(25);
-celsiusToFahr(30);*/
+celsiusToFahr(30);
 
 function celsiusToFahr(temperature) {
   let fahr = (temperature * 9) / 5 + 32;
-  console.log(fahr);
+  return fahr;
 }
 
 celsiusToFahr(25);
 celsiusToFahr(30);
 
-/*const greetingText = "Good morning!";
-const weatherCondition = "sunny";
+const greetingText = "Good afternoon!";
+const weatherCondition = "cloudy";
 const userLocation = "New York";
 let temperature = 22.8673;
-let weatherText =
-  'The weather is ${weatherCondition} in ${userLocation} and it is ${temperature.toString} outside.';
+let celsiusText = `The weather is ${weatherCondition} in ${userLocation} and it's ${temperature.toFixed(
+  1
+)}C outside.`;
+let fahrText = `The weather is ${weatherCondition} in ${userLocation} and it's ${celsiusToFahr(
+  temperature
+).toFixed(1)}F outside.`;
 
 document.querySelector("#greeting").innerHTML = greetingText;
-document.querySelector("p#weather").innerHTML = weatherText;*/
+document.querySelector("p#weather").innerHTML = celsiusText;
 
 document
   .querySelector(".weather-group")
   .addEventListener("click", function (e) {
-    console.log(e.target.id);
+    if (e.target.id == "celsius") {
+      document.querySelector("p#weather").innerHTML = celsiusText;
+    } else if (e.target.id == "fahr") {
+      document.querySelector("p#weather").innerHTML = fahrText;
+    }
   });
