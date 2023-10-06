@@ -76,3 +76,9 @@ document
       document.querySelector("p#weather").innerHTML = fahrText;
     }
   });
+
+//new Date().getHours();
+
+//new Date().getMinutes();
+
+//new Date().getSeconds();
