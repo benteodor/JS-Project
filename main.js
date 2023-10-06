@@ -93,10 +93,47 @@ document.querySelector("span[data-time=seconds").textContent =
 console.log("outside the timeout");
 setInterval(function () {
   let localTime = new Date();
-  document.querySelector("span[data-time=hours").textContent =
-    localTime.getHours();
-  document.querySelector("span[data-time=minutes").textContent =
-    localTime.getMinutes();
-  document.querySelector("span[data-time=seconds").textContent =
-    localTime.getSeconds();
+  document.querySelector("span[data-time=hours").textContent = localTime
+    .getHours()
+    .toString()
+    .padStart(2, "0");
+  document.querySelector("span[data-time=minutes").textContent = localTime
+    .getMinutes()
+    .toString()
+    .padStart(2, "0");
+  document.querySelector("span[data-time=seconds").textContent = localTime
+    .getSeconds()
+    .toString()
+    .padStart(2, "0");
 }, 1000);
+
+/*for (let a = 0; a < 10; a++) {
+  console.log(a);
+}
+*/
+
+/*let animals = ["dog", "cat", "lion", "zebra"];
+for (let a in animals) {
+  console.log(animals[a]);
+}*/
+
+//Gallery Section
+
+const galleryImages = [
+  {
+    src: "./assets/gallery/image1.jpg",
+    alt: "Thumbnail Image 1",
+  },
+  {
+    src: "./assets/gallery/image2.jpg",
+    alt: "Thumbnail Image 2",
+  },
+  {
+    src: "./assets/gallery/image3.jpg",
+    alt: "Thumbnail Image 3",
+  },
+];
+
+for (img in galleryImages) {
+  console.log(img);
+}
