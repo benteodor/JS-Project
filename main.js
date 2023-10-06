@@ -138,6 +138,24 @@ const galleryImages = [
   console.log(img);
 }*/
 
+let mainImage = document.querySelector("#gallery > img");
+let thumbnails = document.querySelector("#gallery .thumbnails");
+
+mainImage.src = galleryImages[0].src;
+mainImage.alt = galleryImages[0].alt;
+
 galleryImages.forEach(function (image, index) {
-  console.log(image);
+  let thumb = document.createElement("img");
+  thumb.src = image.src;
+  thumb.alt = image.alt;
+  thumb.dataset.arrayIndex = index;
+  thumb.dataset.selected = false;
+  thumbnails.appendChild(thumb);
 });
+
+//<img
+//src="./assets/gallery/image1.jpg"
+//alt="Thumbnail Image 1"
+//data-array-index="0"
+//data-selected="true"
+///>
