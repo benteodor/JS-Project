@@ -134,6 +134,10 @@ const galleryImages = [
   },
 ];
 
-for (img in galleryImages) {
+/*for (img in galleryImages) {
   console.log(img);
-}
+}*/
+
+galleryImages.forEach(function (image, index) {
+  console.log(image);
+});
