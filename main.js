@@ -222,22 +222,17 @@ galleryImages.forEach(function (image, index) {
 });
 
 // Product Section
-/*<div class="product-item">
-  <img src="./assets/products/img6.png" alt="AstroFiction" />
-  <div class="product-details">
-    <h3 class="product-title">AstroFiction</h3>
-    <p class="product-author">John Doe</p>
-    <p class="price-title">Price</p>
-    <p class="product-price">$ 49.90</p>
-  </div>
-</div>;
-*/
 
 function productsHandler() {
   let productsSection = document.querySelector(".products-area");
 
   // Run a loop through the products and create an HTML element ("product-item") for each of them
   products.forEach(function (product, index) {
+    let totalProducts = products.length;
+    document.querySelector(
+      ".products-filter label[for=all] span.product-amount"
+    ).textContent = totalProducts;
+
     // Create the HTML element for the individual product
     let productElm = document.createElement("div");
     productElm.classList.add("product-item");
@@ -280,5 +275,13 @@ function productsHandler() {
     productsSection.append(productElm);
   });
 }
+
+/*let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+let greaterThan4 = numbers.filter(function (item) {
+  return true;
+});
+
+console.log(greaterThan4);*/
 
 productsHandler();
