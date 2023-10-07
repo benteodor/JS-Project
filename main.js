@@ -245,6 +245,19 @@ function productsHandler() {
       ".products-filter label[for=free] span.product-amount"
     ).textContent = freeProducts.length;
 
+    let productsFilter = document.querySelector(".products-filter");
+
+    // I get errors here !!
+    /*productsFilter.addEventListener("click", function (e) {
+      if (e.target.id === "all") {
+        populateProducts(products);
+      } else if (e.target.id === "paid") {
+        populateProducts(paidProducts);
+      } else if (e.target.id === "free") {
+        populateProducts(freeProducts);
+      }
+    });*/
+
     // Create the HTML element for the individual product
     let productElm = document.createElement("div");
     productElm.classList.add("product-item");
