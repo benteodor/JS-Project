@@ -226,12 +226,24 @@ galleryImages.forEach(function (image, index) {
 function productsHandler() {
   let productsSection = document.querySelector(".products-area");
 
+  let freeProducts = products.filter(function (item) {
+    return !item.price || item.price <= 0;
+  });
+  let paidProducts = products.filter(function (item) {
+    return item.price > 0;
+  });
+
   // Run a loop through the products and create an HTML element ("product-item") for each of them
   products.forEach(function (product, index) {
-    let totalProducts = products.length;
     document.querySelector(
       ".products-filter label[for=all] span.product-amount"
-    ).textContent = totalProducts;
+    ).textContent = products.length;
+    document.querySelector(
+      ".products-filter label[for=paid] span.product-amount"
+    ).textContent = paidProducts.length;
+    document.querySelector(
+      ".products-filter label[for=free] span.product-amount"
+    ).textContent = freeProducts.length;
 
     // Create the HTML element for the individual product
     let productElm = document.createElement("div");
