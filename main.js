@@ -301,6 +301,13 @@ function productsHandler() {
   });
 }
 
+function footerHandler() {
+  let currentYear = new Date().getFullYear();
+  document.querySelector(
+    "footer"
+  ).textContent = `© ${currentYear} - All rights reserved`;
+  //C 2023 - All rights reserved
+}
 /*let numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
 let greaterThan4 = numbers.filter(function (item) {
@@ -310,3 +317,4 @@ let greaterThan4 = numbers.filter(function (item) {
 console.log(greaterThan4);*/
 
 productsHandler();
+footerHandler();
