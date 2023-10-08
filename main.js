@@ -316,9 +316,13 @@ let greaterThan4 = numbers.filter(function (item) {
 
 console.log(greaterThan4);*/
 
-navigator.geolocation.getCurrentPosition(function (position) {
-  console.log(position);
-});
+// The Fetch Method does not work. Need to check it later again
+
+/*navigator.geolocation.getCurrentPosition((position) => {
+  fetch("https://www.recipesfromitaly.com/tiramisu-original-italian-recipe/")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+});*/
 
 productsHandler();
 footerHandler();
