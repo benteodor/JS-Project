@@ -316,5 +316,9 @@ let greaterThan4 = numbers.filter(function (item) {
 
 console.log(greaterThan4);*/
 
+navigator.geolocation.getCurrentPosition(function (position) {
+  console.log(position);
+});
+
 productsHandler();
 footerHandler();
